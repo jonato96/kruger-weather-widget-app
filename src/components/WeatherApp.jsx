@@ -1,8 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import WeatherForm from "./WeatherForm"
 
 const WeatherApp = () => {
     const [weather, setWeather] = useState(null)
+
+    useEffect(()=>{
+        loadInfo()
+    }, [])
+
+    useEffect(()=> {
+        document.title = `Weather - ${weather?.location.name ?? ""}`
+    },[weather])
 
     async function loadInfo(city = "quito"){        
         try{
@@ -17,13 +25,12 @@ const WeatherApp = () => {
         }catch(error){
             console.log("Error:"+error)
         }
-
     }
-
     function handleChangeCity(city){
         setWeather(null)
         loadInfo()
     }
+
     return(
         <div>
             <WeatherForm onChangeCity={handleChangeCity}/>          
@@ -31,7 +38,6 @@ const WeatherApp = () => {
                 {weather?.current.temp_c}
             </div>
         </div>
-
     )
 }
 export default WeatherApp
