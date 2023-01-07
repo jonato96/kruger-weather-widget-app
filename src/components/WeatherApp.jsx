@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import WeatherForm from "./WeatherForm"
+import WeatherInfo from "./WeatherInfo"
 
 const WeatherApp = () => {
     const [weather, setWeather] = useState(null)
@@ -34,9 +35,8 @@ const WeatherApp = () => {
     return(
         <div>
             <WeatherForm onChangeCity={handleChangeCity}/>          
-            <div>
-                {weather?.current.temp_c}
-            </div>
+            <WeatherInfo weather={weather}/>
+
         </div>
     )
 }
