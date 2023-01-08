@@ -36,6 +36,7 @@ const WeatherApp = () => {
 
     return(
         <div className={styles.weatherContainer}>
+            <h1 className={styles.title}>Weather</h1>
             <WeatherForm onChangeCity={handleChangeCity}/>          
             <WeatherInfo weather={weather}/>
         </div>

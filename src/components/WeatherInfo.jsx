@@ -10,15 +10,15 @@ const WeatherInfo = ({weather})=>{
                 {weather?.location.country}
             </div>
             <div className={styles.row}>
-                <div>
+                <div className={styles.weatherConditions}>
                     <img
                         src={`http:${weather?.current.condition.icon}`}
-                        width="128"
+                        width="96"
                         alt={weather?.current.condition.text}
-                    />
+                    />                    
                 </div>
-                <div className={styles.weatherConditions}>
-                    <div className={styles.conditios}>{weather?.current.condition.text}</div>
+                <div className={styles.condition}>{weather?.current.condition.text}</div>
+                <div>                    
                     <div className={styles.current}>{weather?.current.temp_c}°</div>                                                          
                 </div>
             </div>

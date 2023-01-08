@@ -9,3 +9,7 @@
     border: 0;
     border-radius: 50px;    
 }
+
+input:hover{
+    cursor: pointer;    
+}
