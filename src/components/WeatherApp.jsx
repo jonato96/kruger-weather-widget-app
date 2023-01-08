@@ -5,7 +5,7 @@ import WeatherInfo from "./WeatherInfo"
 const WeatherApp = () => {
     const [weather, setWeather] = useState(null)
 
-    useEffect(()=>{
+    useEffect(()=>{        
         loadInfo()
     }, [])
 
@@ -29,7 +29,7 @@ const WeatherApp = () => {
     }
     function handleChangeCity(city){
         setWeather(null)
-        loadInfo()
+        loadInfo(city)
     }
 
     return(

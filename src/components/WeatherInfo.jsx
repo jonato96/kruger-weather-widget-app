@@ -1,4 +1,5 @@
-const WeatherInfo = ({weather})=>{
+const WeatherInfo = ({weather})=>{    
+    console.log(weather)
     return(
         <div>
             <div>
@@ -17,9 +18,20 @@ const WeatherInfo = ({weather})=>{
                 </div>
                 <div>
                     <div>{weather?.current.condition.text}</div>
-                    <div>{weather?.current.temp_c}°</div>
+                    <div>{weather?.current.temp_c}°</div>                    
+                    <div>{weather?.location.lon}°</div>                    
                 </div>
             </div>
+            <iframe
+                title="map"
+                src={`https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d237560.0897376865!2d${weather?.location.lon}!3d${weather?.location.lat}!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sec!4v1673129544522!5m2!1ses!2sec`}
+                width="600"
+                height="450"
+                style={{border:0}}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
     )
 }
