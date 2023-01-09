@@ -14,9 +14,16 @@ const WeatherForm = ({onChangeCity}) =>{
         onChangeCity(city)
     }
 
+    function validar(e) {        
+        let regex = new RegExp("^[a-zA-Z ]+$");
+        if (!regex.test(e.key)) {
+            e.preventDefault()
+        }
+    }
+
     return(
         <form className={styles.container} onSubmit={handleSubmit}>
-            <input className={styles.input} type="text" onChange={onChange}/>
+            <input onKeyDown={validar} className={styles.input} type="text" onChange={onChange} placeholder="Your Awesome City Here!"/>
         </form>
     )
 }
