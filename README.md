@@ -6,7 +6,10 @@
 </h1>
 
 
-- In this repository you can find the Weather-Widget App
+<p align="center">
+    In this repository you can find the Weather-Widget App
+</p>
+
 
 <div align="center">
     <img src='src/assets/mockup.png'>
@@ -17,6 +20,10 @@
 For a live demo please click on the following link:
 
 https://kruger-weather-widget-app.netlify.app
+
+## About the app
+
+This application is part of the learning process to understand and practice react using its benefits.
 
 ## Built With
 
